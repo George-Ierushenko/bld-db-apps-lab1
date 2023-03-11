@@ -49,4 +49,4 @@ $(BUILD)/%.o: $(SRC)/%.cpp
 .PHONY: clean
 clean:
 	@echo "🧹 Clearing..."
-	rm -rf dist
+	@rm -rf dist

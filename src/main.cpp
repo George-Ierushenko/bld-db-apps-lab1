@@ -1,10 +1,18 @@
 #include <iostream>
-#include "user/user_interface.hpp"
+
+#include "services/cart.hpp"
 
 int main() {
-	int value = VALUE;
+	CartService service;
 
-	std::cout << value << std::endl;
+	auto carts = service.getAllCarts();
+
+	for (auto& cart : carts) {
+		printf(
+			"Cart (%d) has %d articles, with total value of %.2f \n",
+			cart.m_id, cart.m_articles.size(), cart.m_value
+		);
+	}
 
 	return 0;
 }
